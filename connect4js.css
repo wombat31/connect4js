@@ -1,0 +1,24 @@
+#myCanvas{
+    background-color:lightgray;
+}
+
+#connect4Title {
+    background-color:black;
+    color: white;
+    text-align: center;
+    width:390px;
+}
+
+#buttonHolder{
+    margin-left:20px;
+}
+
+.columnButton{
+    margin-left:27px;
+}
+
+#instructions{
+    text-align: center;
+    width:390px;
+}
+

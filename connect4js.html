@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connect 4</title>
+        <link rel="stylesheet" href="connect4js.css">
+    </head>
+    <body>
+        <div id="connect4Title"><h1>Connect4</h1></div>
+        <div id="buttonHolder">
+            <input class="columnButton" type="button" onclick="column1()" value="1">
+            <input class="columnButton" type="button" onclick="column2()" value="2">
+            <input class="columnButton" type="button" onclick="column3()" value="3">
+            <input class="columnButton" type="button" onclick="column4()" value="4">
+            <input class="columnButton" type="button" onclick="column5()" value="5">
+            <input class="columnButton" type="button" onclick="column6()" value="6">
+        </div>
+        <canvas id="myCanvas" width="390" height="340"></canvas>
+        <div id="instructions">To place a token, click a number</div>
+        <script type="text/javascript" src="connect4js.js"></script>
+    </body>
+</html>
