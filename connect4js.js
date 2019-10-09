@@ -1,5 +1,8 @@
 var xoffset = 45;
 var yoffset = 45;
+var redTurn = true;
+
+
 var tokenRecord = [
     [".",".",".",".",".",".","."],
     [".",".",".",".",".",".","."],
@@ -9,13 +12,13 @@ var tokenRecord = [
     [".",".",".",".",".",".","."]
 ]
 
-var columnOne = 6;
-var columnTwo = 6;
-var columnThree = 6;
-var columnFour = 6;
-var columnFive = 6;
-var columnSix = 6;
-var columnSeven = 6;
+var columnOne = 5;
+var columnTwo = 5;
+var columnThree = 5;
+var columnFour = 5;
+var columnFive = 5;
+var columnSix = 5;
+var columnSeven = 5;
 
 
 function drawboard(){
@@ -33,6 +36,25 @@ function drawboard(){
             ctx.fill();
             ctx.closePath();
         }
+    }
+}
+
+function column1(){
+    if (columnOne >= 0){
+        if(redTurn){
+            tokenRecord[columnOne][0] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+        } else {
+            tokenRecord[columnOne][0] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+           }
+        columnOne -= 1;
+    } else {
+        alert("Not a valid move");
     }
 }
 

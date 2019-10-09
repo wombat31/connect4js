@@ -22,3 +22,10 @@
     width:390px;
 }
 
+#turn{
+    background-color: black;
+    text-align: center;
+    width: 390px;
+    color:red;
+}
+
