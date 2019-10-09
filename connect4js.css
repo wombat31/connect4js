@@ -6,26 +6,26 @@
     background-color:black;
     color: white;
     text-align: center;
-    width:390px;
+    width:440px;
 }
 
 #buttonHolder{
-    margin-left:20px;
+    margin-left:19px;
 }
 
 .columnButton{
-    margin-left:27px;
+    margin-left:28px;
 }
 
 #instructions{
     text-align: center;
-    width:390px;
+    width:440px;
 }
 
 #turn{
     background-color: black;
     text-align: center;
-    width: 390px;
+    width: 440px;
     color:red;
 }
 

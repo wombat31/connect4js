@@ -1,6 +1,7 @@
 var xoffset = 45;
 var yoffset = 45;
 var redTurn = true;
+var tokenColor = "red";
 
 
 var tokenRecord = [
@@ -26,17 +27,27 @@ function drawboard(){
     var ctx = canvas.getContext('2d');
     ctx.beginPath();
     ctx.fillStyle = "blue";
-    ctx.fillRect(20,20,350,300);
+    ctx.fillRect(20,20,400,350);
     ctx.closePath();
     for (x = 1; x<7; x++){
-        for (y = 1; y < 6; y++){
+        for (y = 1; y < 8; y++){
+            if (tokenRecord[x-1][y-1]== "R"){
+                tokenColor = "red";
+            } else if (tokenRecord[x-1][y-1] == "Y"){
+                tokenColor = "yellow";
+                }
+            else {
+                tokenColor = "black";
+            }
+            
             ctx.beginPath();
-            ctx.arc( x * 56, y * 56,20,0, 2* Math.PI, false);
-            ctx.fillStyle = "black";
+            ctx.arc( y * 56, x * 56,20,0, 2* Math.PI, false);
+            ctx.fillStyle = tokenColor;
             ctx.fill();
             ctx.closePath();
         }
     }
+   
 }
 
 function column1(){
@@ -46,20 +57,151 @@ function column1(){
             redTurn = false;
             document.getElementById('turn').style.color = "yellow";
             document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
         } else {
             tokenRecord[columnOne][0] = "Y";
             redTurn = true;
             document.getElementById('turn').style.color = "red";
             document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
            }
         columnOne -= 1;
     } else {
         alert("Not a valid move");
     }
+    
 }
 
+function column2(){
+    if (columnTwo >= 0){
+        if(redTurn){
+            tokenRecord[columnTwo][1] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnTwo][1] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnTwo -= 1;
+    } else {
+        alert("Not a valid move");
+    }
+    
+}
+
+function column3(){
+    if (columnThree >= 0){
+        if(redTurn){
+            tokenRecord[columnThree][2] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnThree][2] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnThree -= 1;
+    } else {
+        alert("Not a valid move");
+    }
+    
+}
+
+function column4(){
+    if (columnFour >= 0){
+        if(redTurn){
+            tokenRecord[columnFour][3] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnFour][3] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnFour -= 1;
+    } else {
+        alert("Not a valid move");
+    } 
+}
+
+function column5(){
+    if (columnFive >= 0){
+        if(redTurn){
+            tokenRecord[columnFive][4] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnFive][4] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnFive -= 1;
+    } else {
+        alert("Not a valid move");
+    } 
+}
+
+function column6(){
+    if (columnSix >= 0){
+        if(redTurn){
+            tokenRecord[columnSix][5] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnSix][5] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnSix -= 1;
+    } else {
+        alert("Not a valid move");
+    } 
+}
+
+function column7(){
+    if (columnSeven >= 0){
+        if(redTurn){
+            tokenRecord[columnSeven][6] = "R";
+            redTurn = false;
+            document.getElementById('turn').style.color = "yellow";
+            document.getElementById('turn').innerHTML = "Yellow Turn";
+            updateGame();
+        } else {
+            tokenRecord[columnSeven][6] = "Y";
+            redTurn = true;
+            document.getElementById('turn').style.color = "red";
+            document.getElementById('turn').innerHTML = "Red Turn";
+            updateGame();
+           }
+        columnSeven -= 1;
+    } else {
+        alert("Not a valid move");
+    } 
+}
 
 function updateGame(){
+
     drawboard();
 }
 
