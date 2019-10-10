@@ -200,9 +200,42 @@ function column7(){
     } 
 }
 
+function winCheck(){
+    //check across the rows for a winner
+    for (y=0; y<6; y++){
+        for (x=0; x<5; x++){
+            
+            if(tokenRecord[y][x] == "R" && tokenRecord[y][x+1]=="R" && tokenRecord[y][x+2] == "R" && tokenRecord[y][x+3] == "R"){
+                alert("Red Wins");
+            }
+
+            else if (tokenRecord[y][x] == "Y" && tokenRecord[y][x+1]=="Y" && tokenRecord[y][x+2] == "Y" && tokenRecord[y][x+3] == "Y"){
+                alert("Yellow Wins");
+            }
+        }
+    }
+    //check down the columns for a winner
+    for (y=0; y < 4; y++){
+        for (x=0; x< 6; x++){
+            if(tokenRecord[y][x] == "R" && tokenRecord[y+1][x] == "R" && tokenRecord[y+2][x] == "R" && tokenRecord[y+3][x]== "R"){
+                alert("Red Wins");
+            }
+
+            else if (tokenRecord[y][x] == "Y" && tokenRecord[y+1][x] == "Y" && tokenRecord[y+2][x] == "Y" && tokenRecord[y+3][x]== "Y"){
+                alert("Yellow Wins");
+            }
+
+        }
+    }
+    
+
+}
+
+
 function updateGame(){
 
     drawboard();
+    winCheck();
 }
 
 updateGame();
