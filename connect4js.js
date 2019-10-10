@@ -215,20 +215,54 @@ function winCheck(){
         }
     }
     //check down the columns for a winner
-    for (y=0; y < 4; y++){
-        for (x=0; x< 6; x++){
+    for (y=0; y < 3; y++){
+        for (x=0; x< 7; x++){
             if(tokenRecord[y][x] == "R" && tokenRecord[y+1][x] == "R" && tokenRecord[y+2][x] == "R" && tokenRecord[y+3][x]== "R"){
                 alert("Red Wins");
+                document.getElementById("resetButton").style.display = "block";
             }
 
             else if (tokenRecord[y][x] == "Y" && tokenRecord[y+1][x] == "Y" && tokenRecord[y+2][x] == "Y" && tokenRecord[y+3][x]== "Y"){
                 alert("Yellow Wins");
+                document.getElementById("resetButton").style.display = "block";
             }
 
         }
     }
+    //check for diagonal winner (/)
+    for (y=3; y<6; y++){
+        for(x=0; x<4; x++){
+            if(tokenRecord[y][x] == "R" && tokenRecord[y-1][x+1] == "R" && tokenRecord[y-2][x+2] == "R" && tokenRecord[y-3][x+3]== "R"){
+                alert("Red Wins");
+                document.getElementById("resetButton").style.display = "block";
+            }
+
+            else if (tokenRecord[y][x] == "Y" && tokenRecord[y-1][x+1] == "Y" && tokenRecord[y-2][x+2] == "Y" && tokenRecord[y-3][x+3]== "Y"){
+                alert("Yellow Wins");
+                document.getElementById("resetButton").style.display = "block";
+            }
+        }
+    }
+    // check for diagonal winner (\)
+    for (y=0; y<3; y++){
+        for(x=0; x<4; x++){
+            if(tokenRecord[y][x] == "R" && tokenRecord[y+1][x+1] == "R" && tokenRecord[y+2][x+2] == "R" && tokenRecord[y+3][x+3]== "R"){
+                alert("Red Wins");
+                document.getElementById("resetButton").style.display = "block";
+            }
+
+            else if (tokenRecord[y][x] == "Y" && tokenRecord[y+1][x+1] == "Y" && tokenRecord[y+2][x+2] == "Y" && tokenRecord[y+3][x+3]== "Y"){
+                alert("Yellow Wins");
+                document.getElementById("resetButton").style.display = "block";
+            }
+        }
+    }
     
 
+}
+
+function playAgain(){
+    location.reload();
 }
 
 
